@@ -3,6 +3,7 @@
 namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
+use OrderManagement\Providers\OrderManagementServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -11,7 +12,8 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register(): void
     {
-        //
+        // Register the Order Management package
+        $this->app->register(OrderManagementServiceProvider::class);
     }
 
     /**
